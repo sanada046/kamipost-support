@@ -69,3 +69,62 @@ a { color: var(--coral-shadow); }
 }
 
 footer { text-align: center; color: var(--ink-soft); font-size: 0.85rem; }
+
+/* トップ：アイコン・キャッチコピー・ひとこと紹介 */
+.hero .app-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 27px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+.hero h1 { margin-top: 12px; }
+.hero .catch { font-size: 1.1rem; color: var(--ink); font-weight: bold; }
+.hero .catch span { color: var(--coral-shadow); }
+.hero .lead { color: var(--ink); margin-top: 12px; }
+.hero .device { font-size: 0.85rem; }
+
+/* 画面のスクリーンショット。狭い画面では横にすべらせて見る */
+.shots {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 12px;
+  margin-bottom: 20px;
+}
+.shots figure {
+  flex: 0 0 150px;
+  margin: 0;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.shots img, .ipad img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+figcaption { font-size: 0.8rem; color: var(--ink-soft); margin-top: 4px; }
+
+.ipad { margin: 0 0 20px; text-align: center; }
+
+/* できること：見出しを太字で 1 行目に、説明をその下に */
+.features { list-style: none; padding: 0; margin: 0; }
+.features li {
+  padding: 10px 0 10px 28px;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+.features li:first-child { border-top: none; }
+.features li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 19px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+.features strong { display: block; }
