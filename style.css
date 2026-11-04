@@ -83,13 +83,24 @@ footer { text-align: center; color: var(--ink-soft); font-size: 0.85rem; }
 .hero .lead { color: var(--ink); margin-top: 12px; }
 .hero .device { font-size: 0.85rem; }
 /* Apple の決まりで、バッジは高さ 40px 以上・まわりに余白を取り、形や色を変えない */
-.hero .store { display: flex; justify-content: center; align-items: center; gap: 24px; margin: 18px 0 6px; }
-.hero .store .badge { display: block; height: 60px; width: auto; }
+.hero .store { margin: 14px 0 4px; }
+.hero .store .badge { display: inline-block; height: 50px; width: auto; }
+
+/* 入手の案内。できることを読み終えたところに、アイコン・バッジ・QR コードをまとめて置く */
+.get { display: flex; align-items: center; gap: 20px; }
+.get .app-icon { display: block; width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); }
+.get-text { flex: 1; }
+.get-text p { margin: 0 0 12px; }
+.get .badge { display: block; height: 60px; width: auto; }
 /* QR コードは、ほかの端末の画面に映して読むためのもの。iPhone で見ているときは要らないので、広い画面だけに出す。
    読み取りやすいように、まわりに白い余白を取る */
-.hero .qr { margin: 0; }
-.hero .qr img { display: block; width: 120px; height: 120px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); image-rendering: pixelated; }
-@media (max-width: 600px) { .hero .qr { display: none; } }
+.get .qr { margin: 0; text-align: center; }
+.get .qr img { display: block; width: 120px; height: 120px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); image-rendering: pixelated; }
+@media (max-width: 600px) {
+  .get .qr { display: none; }
+  .get { align-items: flex-start; }
+  .get .app-icon { width: 64px; height: 64px; border-radius: 15px; }
+}
 
 /* 画面のスクリーンショット。狭い画面では横にすべらせて見る */
 .shots {
