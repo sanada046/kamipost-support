@@ -87,19 +87,18 @@ footer { text-align: center; color: var(--ink-soft); font-size: 0.85rem; }
 .hero .store .badge { display: inline-block; height: 50px; width: auto; }
 
 /* 入手の案内。できることを読み終えたところに、アイコン・バッジ・QR コードをまとめて置く */
-.get { display: flex; align-items: center; gap: 20px; }
-.get .app-icon { display: block; width: 88px; height: 88px; border-radius: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); }
-.get-text { flex: 1; }
-.get-text p { margin: 0 0 12px; }
+.get { text-align: center; }
+/* アイコンの角は、先頭の大きいアイコン（120px で 27px）と同じ割合で丸める */
+.get .app-icon { display: block; margin: 0 auto 10px; width: 96px; height: 96px; border-radius: 22.5%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); }
+.get p { margin: 0 0 16px; }
+/* バッジと QR コードは横に並べ、幅が足りない画面では縦に積む */
+.get-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 28px; }
 .get .badge { display: block; height: 60px; width: auto; }
-/* QR コードは、ほかの端末の画面に映して読むためのもの。iPhone で見ているときは要らないので、広い画面だけに出す。
-   読み取りやすいように、まわりに白い余白を取る */
-.get .qr { margin: 0; text-align: center; }
-.get .qr img { display: block; width: 120px; height: 120px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); image-rendering: pixelated; }
+/* QR コードは、読み取りやすいように、まわりに白い余白を取る */
+.get .qr { margin: 0; }
+.get .qr img { display: block; margin: 0 auto; width: 120px; height: 120px; padding: 8px; background: #fff; border-radius: 12px; border: 1px solid var(--line); image-rendering: pixelated; }
 @media (max-width: 600px) {
-  .get .qr { display: none; }
-  .get { align-items: flex-start; }
-  .get .app-icon { width: 64px; height: 64px; border-radius: 15px; }
+  .get-links { flex-direction: column; }
 }
 
 /* 画面のスクリーンショット。狭い画面では横にすべらせて見る */
