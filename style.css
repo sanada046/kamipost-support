@@ -146,3 +146,8 @@ figcaption { font-size: 0.8rem; color: var(--ink-soft); margin-top: 4px; }
   background: var(--coral);
 }
 .features strong { display: block; }
+
+/* 更新履歴：版の番号の横に、出した日を小さく添える */
+.release h2 { display: flex; align-items: baseline; gap: 12px; }
+.release-date { font-size: 0.85rem; font-weight: normal; color: var(--ink-soft); }
+.release h3:first-of-type { margin-top: 8px; }
